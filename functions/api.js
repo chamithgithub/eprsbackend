@@ -1,5 +1,9 @@
-// functions/api.js (Netlify serverless function)
+// functions/api.js
 const serverless = require('serverless-http');
-const app = require('../index'); // Import the Express app
+process.env.NODE_ENV = 'serverless';
 
+// Import the Express app
+const app = require('../index');
+
+// Export the serverless handler
 module.exports.handler = serverless(app);
